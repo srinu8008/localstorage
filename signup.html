@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+    <style>
+        #img{
+            justify-content:center;
+            align-items:center;
+            display:flex;
+            margin:auto;
+            height:90px;
+         }
+        #main{
+            height: 500px;
+            width:20%;
+            
+            padding:30px;
+            margin:auto;
+            margin-top: 40px;
+            font-family: "Helvetica Neue",Helvetica,Arial;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        }
+        #main>h3{
+            text-align:center;
+            margin-bottom: 40px;
+            font-size:40px
+        }
+        lable{
+            font-size: 20px;
+        }
+        #email{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding:5px 60px 5px 30px;
+            border-radius: 5px;
+            border:.1px solid gray;
+        }
+        #phone_number{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding:5px 60px 5px 30px;
+            border-radius: 5px;
+            border:.1px solid gray;
+        }
+        #password{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            padding:5px 60px 5px 30px;
+            border-radius: 5px;
+            border:.1px solid gray;
+        }
+        #submit{
+            padding:12px 70px;
+            font-size: 20px;
+            border-radius: 10px;
+            border:none;
+            margin-left: 60px;
+            margin-bottom:30px;
+            background-color:gray;
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+    <img id="img"  src="https://sso.masaischool.com/brand_dark.svg" alt="">
+    <div id="main">
+        <h3>Sign Up</h3>
+        <form id="form">
+            <lable>Email</lable><br>
+            <input type="text" id="email" placeholder="enter your email"><br>
+            <lable>Phone Number</lable><br>
+            <input type="text" id="phone_number" placeholder="Enter your mobile"><br>
+            <lable>Password</lable><br>
+            <input type="password" id="password" placeholder="Enter your password"><br>
+            <input type="submit" id="submit" name="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("form").addEventListener("submit", signinfunc);
+
+    var userarr = [];
+    function signinfunc(){
+        event.preventDefault();
+        var userobj = {
+            mail:form.email.value,
+            mobile:form.phone_number.value,
+            pw:form.password.value,
+        };
+        userarr.push(userobj);
+       localStorage.setItem("userdetails",JSON.stringify(userarr));
+    }
+</script>
